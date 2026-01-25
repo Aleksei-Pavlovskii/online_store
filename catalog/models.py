@@ -2,20 +2,20 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Наименование", unique=True)
+    name = models.CharField(max_length=100, verbose_name="Категория", unique=True)
     description = models.TextField(verbose_name="Описание")
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = "наименование"
-        verbose_name_plural = "наименования"
+        verbose_name = "категория"
+        verbose_name_plural = "категории"
         ordering = ["name"]
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Наименование")
+    name = models.CharField(max_length=100, verbose_name="Продукт")
     description = models.TextField(blank=True, null=True, verbose_name="Описание")
     image = models.ImageField(
         upload_to="photos/", blank=True, null=True, verbose_name="Фото"
@@ -36,6 +36,6 @@ class Product(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "наименование"
-        verbose_name_plural = "наименования"
+        verbose_name = "продукт"
+        verbose_name_plural = "продукты"
         ordering = ["name"]
