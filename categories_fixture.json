@@ -1,0 +1,50 @@
+[
+    {
+        "model": "catalog.category",
+        "pk": 1,
+        "fields": {
+            "name": "Смартфоны Samsung",
+            "description": "Смартфоны и гаджеты от компании Samsung"
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 2,
+        "fields": {
+            "name": "Смартфоны Apple",
+            "description": "iPhone и другие продукты Apple"
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 3,
+        "fields": {
+            "name": "Смартфоны Xiaomi",
+            "description": "Смартфоны и устройства Xiaomi"
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 4,
+        "fields": {
+            "name": "Ноутбуки",
+            "description": "Ноутбуки всех брендов"
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 5,
+        "fields": {
+            "name": "Планшеты",
+            "description": "Планшеты и графические планшеты"
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 6,
+        "fields": {
+            "name": "Аксессуары",
+            "description": "Чехлы, наушники, зарядные устройства"
+        }
+    }
+]
