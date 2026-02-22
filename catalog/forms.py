@@ -19,16 +19,13 @@ class ProductForm(forms.ModelForm):
         self.fields['description'].widget.attrs.update(
             {'class': 'form-control', 'placeholder': 'Введите описание продукта'})
 
-        self.fields['description'].widget.attrs.update(
-            {'class': 'form-control'})
-
         self.fields['image'].widget.attrs.update({'class': 'form-control'})
 
         self.fields['is_active'].widget.attrs.update({'class': 'form-check-input'})
 
     def clean_price(self):
         price = self.cleaned_data['price']
-        if price <= 0:
+        if price < 0:
             raise ValidationError('Цена не может быть отрицательной или равняться нулю')
         return price
 
