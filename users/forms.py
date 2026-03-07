@@ -14,5 +14,3 @@ class UserRegisterForm(UserCreationForm):
 
         self.fields["password1"].widget.attrs.update({"class": "form-control"})
         self.fields["password2"].widget.attrs.update({"class": "form-control"})
-
-
