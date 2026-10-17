@@ -49,3 +49,9 @@ class ProductForm(forms.ModelForm):
             if word.lower() in description.lower():
                 raise ValidationError("В описании используется запрещенное слово")
         return description
+
+
+class ProductModeratorForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['is_active']
