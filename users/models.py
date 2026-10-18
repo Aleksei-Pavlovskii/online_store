@@ -42,7 +42,7 @@ class User(AbstractUser):
         verbose_name="Avatar",
         blank=True,
         null=True,
-        help_text="Загрухите свой аватар",
+        help_text="Загрузите свой аватар",
     )
     country = models.CharField(
         max_length=30,

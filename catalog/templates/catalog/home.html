@@ -38,6 +38,15 @@
                                 </div>
                                 <span class="fw-bold">{{ product.price }} ₽</span>
                             </div>
+
+                            {% if user == product.owner or perms.catalog.can_unpublish_product %}
+                            <div class="mt-2 d-flex gap-2">
+                                <a href="{% url 'catalog:product_update' product.pk %}"
+                                   class="btn btn-sm btn-outline-primary w-50">Редактировать</a>
+                                <a href="{% url 'catalog:product_delete' product.pk %}"
+                                   class="btn btn-sm btn-outline-danger w-50">Удалить</a>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
