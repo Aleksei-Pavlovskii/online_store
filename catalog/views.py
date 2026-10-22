@@ -10,8 +10,10 @@ from django.views.generic import (
     DeleteView,
 )
 
+from catalog import models
 from catalog.forms import ProductForm, ProductModeratorForm
 from catalog.models import Product
+from catalog.services import get_products_by_category
 
 
 class ProductListView(ListView):
@@ -75,3 +77,13 @@ class ContactTemplateView(TemplateView):
 
 class HomeView(TemplateView):
     template_name = "catalog/home.html"
+
+
+class ProductByCategory(TemplateView):
+    template_name = "catalog/products_by_category.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category_id = self.kwargs.get('pk')
+        context['products'] = get_products_by_category(category_id)
+        return context
