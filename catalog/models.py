@@ -33,7 +33,7 @@ class Product(models.Model):
     price = models.FloatField(verbose_name="Цена за покупку")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
-    is_active = models.BooleanField(default=True, verbose_name="Наличие товара")
+    is_active = models.BooleanField(default=False, verbose_name="Опубликован")
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
